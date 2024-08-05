@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load widget_tweaks %}
+{% block content %}
+
+
+
+{% if form.errors %}
+    <p>İsmin ve şifren uyuşmuyor. Daha sonra tekrar dene.</p>
+{% endif %}
+
+{% if user.is_authenticated %}
+    <h2 style="text-align: center;">Hesabın: {{ user.username }} </h2>
+    <h3 style="text-align: center;">Çıkış Yapmak İçin:</h3>
+    <form method="post" action="{% url 'logout' %}?next=/">
+        {% csrf_token %}
+        <div class="container" style="position: relative; height: 200px">
+            <button type="submit" class="btn btn-danger" style="position: absolute; left: 50%; transform: translateX(-50%); font-size: 48px; top: 50%;">Çıkış</button>
+        </div>
+    </form>
+{% else %}
+<h1 style="text-align: center;">Giriş Yap</h1>
+    <form method="POST" action="{% url 'login' %}">
+        {% csrf_token %}
+        <div class="container">
+            <div class="form-floating mb-3">
+                {{ form.username|add_class:"form-control" }}
+                <label for="{{ form.username.id_for_label }}">Kullanıcı Adı</label>
+            </div>
+            <div class="form-floating mb-3">
+                {{ form.password|add_class:"form-control" }}
+                <label for="{{ form.password.id_for_label }}">Şifre</label>
+            </div>
+            <button type="submit" class="btn btn-primary" style="display:block; margin: auto; font-size: 60x;  width: 160; height: 80;font-size: 30; border-radius: 12px;">Giriş Yap</button>
+        </div>
+    </form>
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load widget_tweaks %}
+{% block content %}
+
+<h1 style="text-align: center;">Kaydol</h1>
+
+{% if form.errors %}
+    <h3 style="text-align: center;">Bir Hata Oluştu! Lütfen Tekrar Dene!</h3>    
+{% endif %}
+    <form method="POST" action="">
+        <div class="container">
+        {% csrf_token %}
+        {% for field in form %}
+            <div class="form-floating mb-3">
+                {{ field|add_class:"form-control" }}
+                {{ field.label_tag }}
+            </div>
+        {% endfor %}
+
+        <br>
+
+        <h5 style="text-align: center;">Şifreniz diğer kişisel bilgilerinizle çok benzer olamaz.</h5>
+        <h5 style="text-align: center;">Şifreniz en az 8 karakterden oluşmalıdır.</h5>
+        <h5 style="text-align: center;">Şifreniz sık kullanılan bir şifre olamaz.</h5>
+        <h5 style="text-align: center;">Şifreniz tamamen sayısal olamaz.</h5>
+
+        <br>
+
+        <button type="submit" class="btn btn-primary" value="signup" style="display:block; margin: auto; font-size: 60x;  width: 160; height: 80;font-size: 30; border-radius: 12px;">Kaydol</button>
+        </div>
+    </form>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load widget_tweaks %}
+
+{% block content %}
+<h1 style="text-align: center;">Post Gönderme Sayfası</h1>
+<form action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="container">
+        <div class="mb-3">
+            <label for="message" class="form-label">Mesaj</label>
+            <input type="text" class="form-control" id="message" name="message">
+        </div>
+        <div class="mb-3">
+            <label for="image" class="form-label">Resim Yükle</label>
+            <input type="file" class="form-control" id="image" name="image">
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="display: block; margin: auto; width: 160px; height: 80px; font-size: 30px; border-radius: 12px;">Gönder</button>
+    </div>
+</form>
+{% endblock content %}
