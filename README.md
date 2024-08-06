@@ -2,7 +2,7 @@
 
 ## What is TweetApp?
 
-tweetapp is twitter's clone. in my prject, you can;
+tweetapp is twitter's clone. in my project, you can;
 * send tweet
 * add image to tweet
 * like / dislike tweet
