@@ -15,7 +15,7 @@ tweetapp is twitter's clone. in my project, you can;
 [Django documents](https://docs.djangoproject.com/en/5.0/)
 
 ~~~
-$ pip install Django
+pip install Django
 ~~~
 
 
@@ -23,14 +23,14 @@ $ pip install Django
 [widget tweaks](https://pypi.org/project/django-widget-tweaks/)
 
 ~~~
-$ pip install django-widget-tweaks
+pip install django-widget-tweaks
 ~~~
 
 ### pillow
 [Pillow Documents](https://pypi.org/project/pillow/)
 
 ~~~
-$ pip install pillow
+pip install pillow
 ~~~
 
 ## example Images
